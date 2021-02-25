@@ -20,7 +20,7 @@ y=np.array([])
 
 
 
-def adjustRSQUARE(ycap,y,d):  #I took this function from my previous lab
+def adjustRSQUARE(ycap,y,d): 
     RSS = 0
     TSS = 0
     yavg = np.mean(y)
@@ -32,7 +32,7 @@ def adjustRSQUARE(ycap,y,d):  #I took this function from my previous lab
 
     return adjR
 
-def Rsquarecalculator(y,yest): #I took this function from my previous lab
+def Rsquarecalculator(y,yest): 
     yavg=np.mean(y)
     RSS=0
     TSS=0
@@ -67,7 +67,7 @@ Xtestnew=np.column_stack((x3t,x5t,x6t,x3t*x3t,x5t*x5t,x6t*x6t,x3t*x5t,x3t*x6t,x5
 x3=x3[0:100]
 x5=x5[0:100]
 x6=x6[0:100]
-X=np.column_stack((x3,x5,x6,x3*x3,x5*x5,x6*x6,x3*x5,x3*x6,x5*x6,x3*x5*x6)) #nonlinear.pdf slides 6th and 7nd
+X=np.column_stack((x3,x5,x6,x3*x3,x5*x5,x6*x6,x3*x5,x3*x6,x5*x6,x3*x5*x6))
 A=X.T
 
 
@@ -81,7 +81,7 @@ Ytrain=np.delete(y,range(60,80),0)
 Adjusted=np.array([])
 Rsqu=np.array([])
 for i in range(0,1000,1):
-    reg=ensemble.GradientBoostingRegressor(max_depth=None,random_state=i,max_features="log2") #I get help from https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html
+    reg=ensemble.GradientBoostingRegressor(max_depth=None,random_state=i,max_features="log2") 
     reg.fit(Xtrain,Ytrain)
     predictions=reg.predict(Xtest)
     Adjusted = np.append(Adjusted,adjustRSQUARE(predictions, Ytest, 10))
