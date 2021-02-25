@@ -66,7 +66,7 @@ def rsquare(y,yest): #I got it from my previous lab.
 
 
 
-def backwardselection(A,X,y): #I got this function from my lab 6.
+def backwardselection(A,X,y): 
     M6cap = np.array([])
     M6coef = coef(A, X, y)
     M6cap = np.append(M6cap, ycap(X, M6coef))
@@ -97,8 +97,8 @@ def backwardselection(A,X,y): #I got this function from my lab 6.
         Thelastcoef = coef(X.T, X, y)
         Thelastcap = ycap(X, Thelastcoef)
         adjRsquare = np.append(adjRsquare, adjustedR(Thelastcap, y, len(X[0])-1))
-    print("Models",adjRsquare) # I look at the sequence of which adjusted R Squared score is maximum, then I looked at the new X matrix results to understand which matrix gives that score
+    print("Models",adjRsquare) 
 
-#As a result of backward selection I understand that if I remove x1,x2 and x4 predictors I will get better Rsquare scores.
+
 backwardselection(A,X,Y)
 
