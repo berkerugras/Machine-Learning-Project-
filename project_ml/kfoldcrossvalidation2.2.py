@@ -26,11 +26,11 @@ X=np.column_stack((ones,x3[0:100],x5[0:100],x6[0:100]))
 A=X.T
 Y=y
 
-def cvest(X,coef): #I took this function from my previous lab
+def cvest(X,coef): 
     cvest=X@coef
     return cvest
 
-def coef(transpose, X, y): #I took this function from my previous lab
+def coef(transpose, X, y): 
     coef = np.linalg.inv(transpose @ X) @ transpose @ y
     return coef
 
@@ -42,7 +42,7 @@ def MSE(yest,y): #I took this function from my previous lab
     MSE=sum/len(y)
     return MSE
 
-def adjustRSQUARE(ycap,y,d): #I took this function from my previous lab
+def adjustRSQUARE(ycap,y,d): 
     RSS = 0
     TSS = 0
     yavg = np.mean(y)
@@ -68,7 +68,7 @@ def Rsquarecalculator(y,yest):
     Rsqu=1-(RSS/TSS)
     return  Rsqu
 
-def kfoldfunction(X,y,k): #I was inspired by my lab 4 when I creating this function
+def kfoldfunction(X,y,k):
     CVMSE=np.array([])
     foldsize = int(np.round((len(X) / k)))
     for i in range(0, len(X) , int(foldsize)):
