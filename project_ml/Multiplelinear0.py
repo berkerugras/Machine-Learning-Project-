@@ -29,7 +29,7 @@ X=np.column_stack((ones, x1[0:100], x2[0:100], x3[0:100],x4[0:100],x5[0:100],x6[
 A=np.transpose(X)
 Y=y
 
-def coef(transpose,X,y): #I got it from my previous lab.
+def coef(transpose,X,y): 
     coef = np.linalg.pinv(transpose@X)@transpose@y
     return coef
 
@@ -45,7 +45,7 @@ def adjustRSQUARE(ycap,y,d): #I got it from my previous lab.
 
     return adjR
 
-def Rsquarecalculator(y,yest): #I got it from my previous lab.
+def Rsquarecalculator(y,yest): 
     yavg=np.mean(y)
     RSS=0
     TSS=0
@@ -59,7 +59,7 @@ def Rsquarecalculator(y,yest): #I got it from my previous lab.
     Rsqu=1-(RSS/TSS)
     print("R^2 value ",Rsqu)
 
-def yest(X,coef):  #I got it from my previous lab.
+def yest(X,coef): 
     yest = X @ coef
     return yest
 
