@@ -64,7 +64,7 @@ def adjustRSQUARE(ycap,y,d): #I took this function from my previous lab
 x3=x3[0:100]
 x5=x5[0:100]
 x6=x6[0:100]
-X=np.column_stack((x3,x5,x6,x3*x3,x5*x5,x6*x6,x3*x5,x3*x6,x5*x6,x3*x5*x6)) #nonlinear.pdf slides 6th and 7nd -also lab7
+X=np.column_stack((x3,x5,x6,x3*x3,x5*x5,x6*x6,x3*x5,x3*x6,x5*x6,x3*x5*x6)) 
 A=X.T
 coefficients=coef(A,X,y)
 estimation=ycap(X,coefficients)
